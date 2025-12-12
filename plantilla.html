@@ -27,10 +27,18 @@
     <link rel="stylesheet" href="css/custom.css">
     <link href="css/style.css" rel="stylesheet">
 </head>
-
+<!-- Esto crea un pequeño espacio del mismo alto que la barra, empujando el resto hacia abajo. -->
+<script>
+window.addEventListener("load", () => {
+  const nav = document.querySelector(".barranav");
+  if (nav) {
+    document.body.style.paddingTop = nav.offsetHeight + "px";
+  }
+});
+</script>
 <body>
     <!-- Contenedor para cargar la barra de menú usando JavaScript -->
-    <div id="menu"></div>
+    <div id="menu" class="barranav"></div>
     <!-- Contenido de la página - Inicio -->
     <!-- Contenido de la página - Final -->
     <!-- Contenedor para cargar el pie de página usando JavaScript -->

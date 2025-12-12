@@ -1,18 +1,21 @@
 
 //Lista que contiene los elementos que se van a mostrar en el carrusel de la pagina principal
 const elementos_carrusel = [
-    {nombre:"Diseño Grafico", 
-    descripcion:"Elaboramos y creamos el diseño de tu marca, como la creación de logo, manuales corporativos, diseños y catálogos para que muestres tus productos o servicios.",
-    imagen:"img/brochure.png"},
-    {nombre:"Social media", 
-    descripcion:"Diseñamos tus post, stories para el feed de tus redes sociales para que se vea de una forma atractiva y corporativa.",
-    imagen:"img/redes-divine.jpg"},
-    {nombre:"P.O.P", 
-    descripcion:"Aplicamos tu marca a diferentes piezas publicitarias obteniendo espectaculares resultados en avisos, habladores QR, señalética y muchos más.",
-    imagen:"img/aa3d.jpg"},
-    {nombre:"Papeleria comercial", 
-    descripcion:"Diseñamos e imprimimos la papelería comercial de tu empresa, incluyendo talonarios, hojas membretadas, tarjetas de presentación y más.",
-    imagen:"img/2.jpg"},
+    {nombre:"Jeans", 
+    descripcion:"Hermosos Jeans que se ajiustan perfectamente a tu figura",
+    imagen:"img/1.png"},
+    {nombre:"Conjuntos", 
+    descripcion:"Variedad de conjuntos para que puedas elegir el adecuado para ti",
+    imagen:"img/2.png"},
+    {nombre:"Camisetas", 
+    descripcion:"Necesitas un look deportivo, aqui puedes elegir tu color y estilo favorito",
+    imagen:"img/3.png"},
+    {nombre:"Hermosas Blusas", 
+    descripcion:"Blusas para todas las ocasiones, desde un evento formal hasta casuales.",
+    imagen:"img/4.png"},
+    {nombre:"Metodos de financiación", 
+    descripcion:"Blusas para todas las ocasiones, desde un evento formal hasta casuales.",
+    imagen:"img/addi.jpg"},
 ]
 
 const lista_categorias = [

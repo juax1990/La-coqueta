@@ -22,43 +22,37 @@
 
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <script src="basedatos/datos.js"></script>
 
     <!-- Customized Bootstrap Stylesheet -->
 
     <link href="css/style.css" rel="stylesheet">
 </head>
+<!-- Esto crea un pequeño espacio del mismo alto que la barra, empujando el resto hacia abajo. -->
+<script>
+    window.addEventListener("load", () => {
+        const nav = document.querySelector(".barranav");
+        if (nav) {
+            document.body.style.paddingTop = nav.offsetHeight + "px";
+        }
+    });
+</script>
 
 <body>
     <!-- Contenedor para cargar la barra de menú usando JavaScript -->
-    <div id="menu"></div>
+    <div id="menu" class="barranav"></div>
     <!-- Contenido de la página - Inicio -->
 
     <!-- Carrusel -->
+
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" style="height: 410px;">
-                <img class="img-fluid" src="img/carousel-1.jpg" alt="Image">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 700px;">
-                        <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order
-                        </h4>
-                        <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
-                        <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item" style="height: 410px;">
-                <img class="img-fluid" src="img/carousel-2.jpg" alt="Image">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 700px;">
-                        <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order
-                        </h4>
-                        <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
-                        <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        <!-- Indicadores -->
+        <ol class="carousel-indicators"></ol>
+
+        <!-- Contenedor de slides -->
+        <div class="carousel-inner"></div>
+
         <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
             <div class="btn btn-dark" style="width: 45px; height: 45px;">
                 <span class="carousel-control-prev-icon mb-n2"></span>
@@ -69,10 +63,65 @@
                 <span class="carousel-control-next-icon mb-n2"></span>
             </div>
         </a>
+
     </div>
 
     <!-- Fin del carrusel -->
 
+    <!-- Script para cargar el carrusel de manera dinamica -->
+
+    <script>
+        const indicators = document.querySelector("#header-carousel .carousel-indicators");
+        const inner = document.querySelector("#header-carousel .carousel-inner");
+
+        elementos_carrusel.forEach((elemento, indice) => {
+
+            /* === Indicadores === */
+            const li = document.createElement("li");
+            li.setAttribute("data-target", "#header-carousel");
+            li.setAttribute("data-slide-to", indice);
+            if (indice === 0) li.classList.add("active");
+            indicators.appendChild(li);
+
+            /* === Slide === */
+            const item = document.createElement("div");
+            item.classList.add("carousel-item");
+            if (indice === 0) item.classList.add("active");
+
+            item.style.height = "410px";
+
+            item.innerHTML = `
+            <div class="container h-100">
+                <div class="row h-100 d-flex align-items-center">
+                    
+                    <!-- Texto centrado perfectamente -->
+                    <div class="col-lg-6 d-flex align-items-center">
+                        <div class="text-left w-100">
+                            <h3 class="text-primary font-weight-bold mb-3">${elemento.nombre}</h3>
+                            <p class="text-dark mb-4">${elemento.descripcion}</p>
+                        </div>
+                    </div>
+
+                    <!-- Columna de la imagen (DERECHA) -->
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                        <img class="img-fluid" id="imgcarrusel"src="${elemento.imagen}" alt="${elemento.nombre}">
+                    </div>
+
+                </div>
+            </div>
+        `;
+
+            inner.appendChild(item);
+        });
+    </script>
+    <!-- Temporizador del carrusel -->
+    <script>
+        $('#header-carousel').carousel({
+            interval: 4000, // 4 segundos
+            ride: 'carousel'
+        });
+    </script>
+    <!-- Fin del carrusel y srcript de este -->
 
     <!-- Featured Start -->
     <div class="container-fluid pt-5">

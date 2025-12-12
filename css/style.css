@@ -189,9 +189,13 @@ sup {
 }
 
 .barranav {
+  position: fixed;
   top: 0;
-  margin-bottom: 10px;
-  box-shadow: 0 0 15px #000;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* asegura que quede por encima del contenido */
+  box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+  background-color: #fff; /* importante si antes era transparente */
 }
 
 .container-fluid, .row, .col-lg-6, .col-lg-3 {
@@ -218,7 +222,69 @@ a h1 {
   color: #00a89b;
 }
 
-/*Pie.    */
+/*--------- Ajustes para pantallas pequeñas --------*/
+@media (max-width: 480px) {
+
+    /* Reduce el tamaño del logo */
+    .container-img img {
+        width: 45px !important; /* Ajusta según necesites */
+        height: auto;
+    }
+
+    /* Reduce el texto "La Coqueta" */
+    .container-img h1 {
+        font-size: 20px !important;
+        margin-left: 5px;
+    }
+
+    /* Ajusta el alto del header para que no se solape */
+    .container-fluid .row.align-items-center {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+
+    /* Baja un poco el botón del menú hamburguesa */
+    .navbar-toggler {
+        padding: 4px 6px !important;
+        margin-top: 5px !important;
+        transform: scale(0.9); /* hace más pequeño el icono */
+    }
+
+    /* Hace que el navbar abierto NO tape el logo */
+    #navbarCollapse {
+        margin-top: 10px;
+    }
+}
+
+/*----- Pie --------*/
+
+.footer-fondo {
+  position: relative !important;
+  background-image: url("/img/fondo.jpeg"); /* Asegúrate de la ruta correcta */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff !important;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Esta capa solo afecta el fondo, no el contenido */
+.footer-fondo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.612); /* Oscurece solo el fondo */
+  pointer-events: none; /* 👈 deja que el texto siga siendo clickeable */
+  mix-blend-mode: multiply; /* 👈 oscurece la imagen sin afectar el texto */
+  z-index: 0;
+}
+
+/* El contenido va encima del fondo */
+.footer-fondo > * {
+  position: relative !important;
+  z-index: 1;
+}
 
 a:not([href]):not([class]) {
   color: inherit;
@@ -2537,7 +2603,7 @@ textarea.form-control.is-invalid {
   text-align: center;
   vertical-align: middle;
   user-select: none;
-  background-color: transparent;
+  background-color: #FFFFFF;
   border: 1px solid transparent;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
@@ -6274,8 +6340,37 @@ a.close.disabled {
   color: #6f6f6f;
 }
 
+/*-------- Carrusel ---------*/
+
+#header-carousel {
+  background-color: #E4FAF7;
+  border-radius: 10px;
+}
+
 .carousel {
   position: relative;
+  padding-top: 20px;
+}
+#header-carousel .carousel-item {
+    height: 410px !important;
+}
+
+#header-carousel .carousel-item .row {
+    height: 100%;
+}
+
+#header-carousel .col-lg-6 {
+    height: 100%;
+}
+
+.carousel-control-prev .btn {
+    position: absolute;
+    left: -1px;  /* MOVER HACIA AFUERA */
+}
+
+.carousel-control-next .btn {
+    position: absolute;
+    right: -1px; /* MOVER HACIA AFUERA */
 }
 
 .carousel.pointer-event {
@@ -6286,6 +6381,7 @@ a.close.disabled {
   position: relative;
   width: 100%;
   overflow: hidden;
+  padding-bottom: 30px;
 }
 
 .carousel-inner::after {
@@ -6302,6 +6398,15 @@ a.close.disabled {
   margin-right: -100%;
   backface-visibility: hidden;
   transition: transform 0.6s ease-in-out;
+}
+
+#imgcarrusel {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  max-height: 300px;
+  width: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6410,10 +6515,11 @@ a.close.disabled {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
 }
 
+
 .carousel-indicators {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -40px;
   left: 0;
   z-index: 15;
   display: flex;
@@ -6433,7 +6539,7 @@ a.close.disabled {
   margin-left: 3px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #00A89B;
   background-clip: padding-box;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
