@@ -260,7 +260,7 @@ a h1 {
 
 .footer-fondo {
   position: relative !important;
-  background-image: url("/img/fondo.jpeg"); /* Asegúrate de la ruta correcta */
+  background-image: url("/img/fondo.jpg"); /* Asegúrate de la ruta correcta */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
