@@ -29,17 +29,103 @@
 </head>
 <!-- Esto crea un pequeño espacio del mismo alto que la barra, empujando el resto hacia abajo. -->
 <script>
-window.addEventListener("load", () => {
-  const nav = document.querySelector(".barranav");
-  if (nav) {
-    document.body.style.paddingTop = nav.offsetHeight + "px";
-  }
-});
+    window.addEventListener("load", () => {
+        const nav = document.querySelector(".barranav");
+        if (nav) {
+            document.body.style.paddingTop = nav.offsetHeight + "px";
+        }
+    });
 </script>
+
 <body>
     <!-- Contenedor para cargar la barra de menú usando JavaScript -->
     <div id="menu" class="barranav"></div>
     <!-- Contenido de la página - Inicio -->
+
+    <div id="formMessage" class="mb-3"></div>
+    <!-- Start Contact -->
+    <div class="container form-contact mt-0">
+        <div class="row">
+            <form class="col-md-7 m-auto" method="post" role="form">
+                <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="inputname">Nombre</label>
+                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Jhon Wick">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="inputemail">Email</label>
+                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Tu email">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputsubject">Asunto</label>
+                    <input type="text" class="form-control mt-1" id="subject" name="subject"
+                        placeholder="Asunto de tu mensaje">
+                </div>
+                <div class="mb-3">
+                    <label for="inputmessage">Mensaje</label>
+                    <textarea class="form-control mt-1" id="message" name="message" placeholder="Tu mensaje"
+                        rows="3"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col text-end mt-2">
+                        <button type="submit" id="btn-contact" class="btn btn-success btn-lg px-3">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End Contact -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.querySelector("form");
+            const formMessage = document.getElementById("formMessage");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // Evita que la página se recargue
+
+                // Validación básica
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const subject = document.getElementById("subject").value.trim();
+                const message = document.getElementById("message").value.trim();
+
+                if (!name || !email || !subject || !message) {
+                    formMessage.innerHTML = `
+        <div class="alert alert-danger" role="alert">
+          ⚠️ Por favor, completa todos los campos.
+        </div>
+      `;
+                    return;
+                }
+
+                // Si pasa validación, mostramos mensaje de éxito
+                formMessage.innerHTML = `
+      <div class="alert alert-success" role="alert">
+        ✅ Tu mensaje ha sido enviado exitosamente.
+      </div>
+    `;
+
+                // Limpia los campos del formulario
+                form.reset();
+            });
+        });
+    </script>
+
+
+    <!-- Start Map -->
+    <div class=""></div>
+    <h4 class="visitanos">Visitanos</h4>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1307.70726118475!2d-76.46042588426587!3d3.4052675591849892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a754f60a98f9%3A0xc3432cc337747904!2sCra%2037%20%2315-40%2C%20Manuela%20Beltran%2C%20Candelaria%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1765833296148!5m2!1ses!2sco" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+    <!-- End Map -->
+
     <!-- Contenido de la página - Final -->
     <!-- Contenedor para cargar el pie de página usando JavaScript -->
     <div id="pie"></div>
