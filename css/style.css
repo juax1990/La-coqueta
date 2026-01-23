@@ -260,7 +260,7 @@ a h1 {
 
 .footer-fondo {
   position: relative !important;
-  background-image: url("img/fondo.jpg"); /* Asegúrate de la ruta correcta */
+  background-image: url("https://tactac-diseno.com/wp-content/uploads/2023/11/Diseno-para-tienda-de-ropa-Barranquilla-Colombia-3.jpg"); /* Asegúrate de la ruta correcta */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -274,7 +274,7 @@ a h1 {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.612); /* Oscurece solo el fondo */
+  background: rgba(0, 0, 0, 0.721); /* Oscurece solo el fondo */
   pointer-events: none; /* 👈 deja que el texto siga siendo clickeable */
   mix-blend-mode: multiply; /* 👈 oscurece la imagen sin afectar el texto */
   z-index: 0;
@@ -6427,6 +6427,20 @@ a.close.disabled {
   max-height: 100%;
   width: auto;
 }
+
+/*-------- imagenes de las categorias ---------*/
+
+.cat-img {
+    height: 400px;          /* ajusta el alto que quieras */
+}
+
+.cat-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* recorta sin deformar */
+    object-position: center;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .carousel-item {

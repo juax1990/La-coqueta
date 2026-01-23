@@ -19,12 +19,12 @@ const elementos_carrusel = [
 ]
 
 const lista_categorias = [
-    { codigo_categoria: "9001", nombre: "Avisos publicitarios",imagen:"img/atb.png", descripcion:"Aviso exterior o inferior, el cual puede tener luces, echo en diferentes materiales como acrilico, lona y mas" },
-    { codigo_categoria: "9002", nombre: "Pines", imagen:"img/pines.jpg", descripcion:"Formas en acrilico ideales para destacar tu trabajo de uñas" },
-    { codigo_categoria: "9003", nombre: "Catálogos", imagen:"img/cmp.jpg", descripcion:"Diseñamos tu catalogo de productos y servicios." },
-    { codigo_categoria: "9004", nombre: "Diseño textil", imagen:"img/diseno-textil-1.png", descripcion:"Diseñamos productos textiles acorde a tus colores y misión." },
-    { codigo_categoria: "9006", nombre: "Señalética", imagen:"img/senal.jpg", descripcion:"Señales de abierto cerrado, etc" },
-    { codigo_categoria: "9007", nombre: "Habladores QR", imagen:"img/hablador.jpg", descripcion:"Hablador que facilita a tu cliente pagar de manera correcta." },
+    { codigo_categoria: "9001", nombre: "Jeans",imagen:"img/jean.jpg"},
+    { codigo_categoria: "9002", nombre: "Conjuntos", imagen:"img/conjuntos.jpeg" },
+    { codigo_categoria: "9003", nombre: "Accesorios", imagen:"img/accesorios.jpg" },
+    { codigo_categoria: "9004", nombre: "Hermosas Blusas", imagen:"img/blusas.jpg" },
+    { codigo_categoria: "9006", nombre: "Camisetas", imagen:"img/camisetas.jpg" },
+    { codigo_categoria: "9007", nombre: "Vestidos", imagen:"img/vestidos.jpg" },
 ];
 
 
