@@ -82,29 +82,7 @@ const lista_moda = [
     imagen:"img/body.jpg", precio:"13000", },
 ]
 
-const lista_productos = [
-    {codigo:"1000", nombre:"Aviso tipo boton", 
-    descripcion:"Aviso circular en la que destaca tu marca y decora los espacios de tu local.", codigo_categoria:"9001",
-    imagen:"img/atb.png", precio:"27000", contenido:["Material: Acrílico","Medidas: 40x40cm","Iluminación opcional"]},
-    {codigo:"1002", nombre:"Pines", 
-    descripcion:"Ideal para mostrar el diseño de uñas.", codigo_categoria:"9002",
-    imagen:"img/pines.jpg", precio:"50000", contenido:["Formas en acrillico para mostrar el diseño de tus uñas"]},
-    {codigo:"1003", nombre:"Diseño de catalogo", 
-    descripcion:"Diseñamos tu catalogo de productos y servicios.", codigo_categoria:"9003",
-    imagen:"img/cmp.jpg", precio:"10000", contenido:["Diseñamos tu catalogo de productos y servicios."]},
-    {codigo:"1004", nombre:"Diseño textil", 
-    descripcion:"Diseñamos productos textiles acorde a tus colores y misión.", codigo_categoria:"9004",
-    imagen:"img/diseno-textil-1.png", precio:"12000", contenido:["Diseñamos productos textiles acorde a tus colores y misión."]},
-    {codigo:"1005", nombre:"Aviso caja luminosa", 
-    descripcion:"Aviso externo con iluminación que hara resaltar tu negocio.", codigo_categoria:"9001",
-    imagen:"img/cl.png", precio:"90000", contenido:["Caja luminosa en diferentes materiales para hacer resaltar tu aviso tanto de dia como en la noche"]},
-    {codigo:"1006", nombre:"Señaletica", 
-    descripcion:"Señales de abierto cerrado.", codigo_categoria:"9006",
-    imagen:"img/senal.jpg", precio:"10000", contenido:["Señales de reglamento para tu negocio, abierto y cerrado, salidas de emergencia, indicadores de cuertos"]},
-    {codigo:"1007", nombre:"Habladores QR", 
-    descripcion:"QR con tu numero de cuenta.", codigo_categoria:"9007",
-    imagen:"img/hablador.jpg", precio:"13000", contenido:["Hablador que facilita a tu cliente pagar de manera correcta."]},
-]
+
 // Lista que representa el carrito de compras del usuario
 
 let carrito = [];
