@@ -51,8 +51,9 @@ body {
   font-size: 1rem;
   color: #1c1c1c;
   background-color: #ffffff;
-  padding-top: 90px;
+  padding-top: 60px;
 }
+
 
 span {
   color: #00a89b;
@@ -6060,7 +6061,7 @@ a.close.disabled {
   padding-top: 20px;
 }
 #header-carousel .carousel-item {
-    height: 410px !important;
+    height: 410px;
 }
 
 #header-carousel .carousel-item .row {
@@ -6112,10 +6113,63 @@ a.close.disabled {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   width: 100%;
-  max-height: 70vh;
+  max-height: 300px;
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        /* Altura fija para móvil: ajusta los 550px según tu gusto */
+        height: 550px !important; 
+        padding: 20px 0;
+    }
+
+    #header-carousel .row {
+        flex-direction: column; /* Texto arriba, imagen abajo */
+        justify-content: space-between; /* Estira el contenido para llenar los 550px */
+        height: 100%;
+    }
+
+    /* Limitamos el tamaño del área de texto para que no empuje a la imagen */
+    #header-carousel .col-lg-6:first-child {
+        height: 40%; 
+        overflow: hidden; /* Por si el texto es muy largo */
+    }
+
+    /* Limitamos el tamaño del área de imagen */
+    #header-carousel .col-lg-6:last-child {
+        height: 60%;
+    }
+
+    #imgcarrusel {
+        width: auto;      /* Que no se estire a lo ancho */
+        max-width: 100%;
+        height: 100%;     /* Que use el 60% del contenedor */
+        object-fit: contain; /* Muestra la imagen completa sin deformar */
+    }
+
+    #header-carousel h3 {
+        font-size: 1.2rem !important; /* Tamaño más manejable */
+        line-height: 1.2;
+        margin-bottom: 10px !important;
+    }
+
+    /* Ajuste de la descripción (p) del carrusel */
+    #header-carousel p {
+        font-size: 0.8rem !important; /* Un poco más pequeña para dejar espacio */
+        line-height: 1.2;
+        margin-bottom: 0 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Corta el texto si pasa de 3 líneas para no romper la altura */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Reducimos el padding del contenedor de texto */
+    #header-carousel .text-center {
+        padding: 0 15px;
+    }
+}
 
 /*-------- imagenes de las categorias ---------*/
 
@@ -6133,9 +6187,10 @@ a.close.disabled {
 /*-------- imagenes de las ofertas ---------*/
 #contenedor-ofertas .cat-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 500px;
+  object-fit: contain;
   object-position: center;
+  margin: 0 auto;
    /* llena sin deformar */
 }
 
